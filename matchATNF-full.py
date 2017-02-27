@@ -70,13 +70,15 @@ for currentpulsar in range(len(pulsar_id)):  # Pulsar loop
                 shortest_distance = distance.arcminute  # New best found
                 bestfit_pulsar_id = pulsar_id[currentpulsar]
                 bestfit_habcat_id = habcat_id[currenthabcat]
+                bestfit_pulsar_period = pulsar_period[currentpulsar]
     print(currentpulsar, bestfit_pulsar_id, bestfit_habcat_id, shortest_distance / 60.)  # deg
 
     with open('result-atnf-full.csv', 'a') as fp:  # Append each result to CSV
-        a = csv.writer(fp, delimiter=';')
+        a = csv.writer(fp, delimiter=',')
         a.writerow([
             bestfit_pulsar_id,
             bestfit_habcat_id,
-            shortest_distance / 60.])  # degrees
+            shortest_distance / 60., # arcmin
+            bestfit_pulsar_period])
 
 print('Done.')

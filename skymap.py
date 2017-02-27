@@ -41,6 +41,6 @@ with open('planet_list.csv', 'r') as csvfile:
         ra_coord = numpy.append(ra_coord, ra.degree)
         de_coord = numpy.append(de_coord, de.degree)
 
-plot_mwd(ra_coord,de_coord, org=90, title ='Exoplants')
+plot_mwd(ra_coord,de_coord, org=90, title ='Exoplanets')
 plt.savefig("planets_skymap.pdf", bbox_inches = 'tight')
 plt.show()
